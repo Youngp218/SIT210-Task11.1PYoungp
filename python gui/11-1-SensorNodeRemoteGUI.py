@@ -4,9 +4,9 @@ import SensorNodeDisplay
 import SECRETS
 
 # Strongly type the list of nodes, so it always knows what it's working with
-type NodeList = list[SensorNodeDisplay.SensorNodeDisplay]
-type ThreadList = list[QtCore.QThread]
-type WorkerList = list[SensorNodeDisplay.NodeUpdateWorker]
+NodeList = list[SensorNodeDisplay.SensorNodeDisplay]
+ThreadList = list[QtCore.QThread]
+WorkerList = list[SensorNodeDisplay.NodeUpdateWorker]
 
 class NodeSelectorWindow(QtWidgets.QMainWindow):
     def __init__(self, app: QtWidgets.QApplication):
@@ -75,7 +75,7 @@ def window():
     win.addNode(SECRETS.THINGSPEAK_CHANNEL_ID, SECRETS.THINGSPEAK_READ_API_KEY, "Backyard Node", [13, 200, 40, 16])
     #Dummy node that has no corresponding channel on thingspeak
     win.addNode("SECRETS.THINGSPEAK_CHANNEL_ID", "SECRETS.THINGSPEAK_READ_API_KEY", "Uninitialized Node")
-    win.setGeometry(400, 400, 600, 300)
+    win.setGeometry(400, 400, 800, 600)
     win.setWindowTitle("Task 10.1 BoM Node Inspector")
     win.show()
     sys.exit(app.exec_())
